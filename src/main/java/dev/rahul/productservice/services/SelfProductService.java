@@ -7,8 +7,29 @@ import org.springframework.stereotype.Service;
 @Service("SelfProductServiceImpl")
 public class SelfProductService implements ProductService{
 
-        @Override
-        public GenericProductDto getProductById(Long id) {
-            return null;
-        }
+    @Override
+    public GenericProductDto getProductById(Long id) {
+        return null;
+    }
+
+    @Override
+    public GenericProductDto createProduct(GenericProductDto product) {
+        return null;
+    }
+
+    @Override
+    public GenericProductDto updateProductById(Long id, GenericProductDto product){
+        return null;
+    }
+
+    @Override
+    public GenericProductDto[] getAllProducts(){
+        return null;
+    }
+
+    @Override
+    public GenericProductDto deleteProductById(Long id){
+        return null;
+    }
+
 }

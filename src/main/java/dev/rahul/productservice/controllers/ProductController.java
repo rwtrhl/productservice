@@ -28,8 +28,8 @@ public class ProductController {
 //    }
 
     @GetMapping
-    public void getAllProducts(){
-
+    public GenericProductDto[] getAllProducts(){
+        return productService.getAllProducts();
     }
 
     @GetMapping("{id}")
@@ -38,17 +38,17 @@ public class ProductController {
     }
 
     @DeleteMapping("{id}")
-    public void deleteProductId(@PathVariable("id") Long id){
-
+    public GenericProductDto deleteProductId(@PathVariable("id") Long id){
+        return productService.deleteProductById(id);
     }
 
     @PostMapping
-    public String createProduct(){
-        return "Created a product with id " + UUID.randomUUID();
+    public GenericProductDto createProduct(@RequestBody GenericProductDto product){
+        return productService.createProduct(product);
     }
 
     @PutMapping("{id}")
-    public void updateProductById(@PathVariable("id") Long id){
-
+    public GenericProductDto updateProductById(@PathVariable("id") Long id, @RequestBody GenericProductDto product){
+        return productService.updateProductById(id, product);
     }
 }

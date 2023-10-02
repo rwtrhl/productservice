@@ -6,4 +6,12 @@ import dev.rahul.productservice.models.Product;
 public interface ProductService {
 
     GenericProductDto getProductById(Long id);
+
+    GenericProductDto createProduct(GenericProductDto product);
+
+    GenericProductDto updateProductById(Long id, GenericProductDto product);
+
+    GenericProductDto[] getAllProducts();
+
+    GenericProductDto deleteProductById(Long id);
 }
