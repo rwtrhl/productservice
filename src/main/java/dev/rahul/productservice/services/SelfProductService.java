@@ -4,6 +4,8 @@ import dev.rahul.productservice.dtos.GenericProductDto;
 import dev.rahul.productservice.models.Product;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("SelfProductServiceImpl")
 public class SelfProductService implements ProductService{
 
@@ -23,7 +25,7 @@ public class SelfProductService implements ProductService{
     }
 
     @Override
-    public GenericProductDto[] getAllProducts(){
+    public List<GenericProductDto> getAllProducts(){
         return null;
     }
 

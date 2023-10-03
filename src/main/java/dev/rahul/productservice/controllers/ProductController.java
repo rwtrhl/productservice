@@ -1,15 +1,16 @@
 package dev.rahul.productservice.controllers;
 
 
+import dev.rahul.productservice.dtos.ExceptionDto;
 import dev.rahul.productservice.dtos.GenericProductDto;
-import dev.rahul.productservice.models.Product;
+import dev.rahul.productservice.exceptions.NotFoundException;
 import dev.rahul.productservice.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
+import java.util.List;
 
 @RestController
 @RequestMapping("/products")
@@ -27,13 +28,15 @@ public class ProductController {
 //        this.productService = productService;
 //    }
 
+
+
     @GetMapping
-    public GenericProductDto[] getAllProducts(){
+    public List<GenericProductDto> getAllProducts(){
         return productService.getAllProducts();
     }
 
     @GetMapping("{id}")
-    public GenericProductDto getProductById(@PathVariable("id") Long id){
+    public GenericProductDto getProductById(@PathVariable("id") Long id) throws NotFoundException{
         return productService.getProductById(id);
     }
 
