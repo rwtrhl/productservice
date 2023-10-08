@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/products")
-
 public class ProductController {
     // Field injection (Not recommended)
 //    @Autowired
     ProductService productService;
     // Constructor injection
-    public ProductController(@Qualifier("FakeStoreProductServiceImpl") ProductService productService){
+    public ProductController(ProductService productService){
         this.productService = productService;
     }
     // Setter injection (Not recommended)
